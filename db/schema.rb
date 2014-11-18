@@ -11,16 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118023651) do
+ActiveRecord::Schema.define(version: 20141118215446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "streams", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.binary   "stream"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "streams_file_name"
+    t.string   "streams_content_type"
+    t.integer  "streams_file_size"
+    t.datetime "streams_updated_at"
   end
 
 end
