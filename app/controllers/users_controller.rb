@@ -5,14 +5,11 @@ class UsersController < ApplicationController
 	end
 
 	def create
-	u = User.where(email: params[:email].first)
-	if u && u.authenticate(params[:user][:password])
-		session[:user_id] = u.id.to_s
-		u.is_logged_in = true
-		u.save
+		@user = User.new(user_params)
+		if @user.save
 		redirect to streams_path
 	else
-		redirect_to new_session_path
+		redirect_to users_path
 	end
 end
 
