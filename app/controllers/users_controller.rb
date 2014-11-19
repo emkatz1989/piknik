@@ -5,13 +5,16 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.create(user_params)
-		  if @user.save
-		  	redirect_to root_url, :notice => "User was successfully created!"
-		  else 
-		  	redirect_to new_user_path
-		  end
-		end
+	u = User.where(email: params[:email].first)
+	if u && u.authenticate(params[:user][:password])
+		session[:user_id] = u.id.to_s
+		u.is_logged_in = true
+		u.save
+		redirect to streams_path
+	else
+		redirect_to new_session_path
+	end
+end
 
 	def update
 		@user = User.find(params[:id])
