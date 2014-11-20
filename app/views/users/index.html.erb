@@ -11,9 +11,9 @@ Hi, this is the user's index
 <% if current_user != nil %>
 		<% @users.each do |u| %>
 			<div class="user_box"><h1><%= u.email %></h1>
-				<% u.streams.each do |p| %>
-					<%= image_tag p.image.url(:square) %><br />
-				<% end %>
+				<%# u.streams.each do |p| %>
+					<%#= image_tag p.image.url(:square) %><br />
+				<%# end %>
 			</div>
 		<% end %>
 	<% end %>
