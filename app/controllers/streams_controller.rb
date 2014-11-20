@@ -29,7 +29,7 @@ class StreamsController < ApplicationController
 	def destroy
 		@stream = Stream.find(params[:id])
 		@stream.destroy
-
+	end
 	private
 
 	def stream_params
