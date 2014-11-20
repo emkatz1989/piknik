@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+		@stream = Stream.new
 	end
 
 	def create
