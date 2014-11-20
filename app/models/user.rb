@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+    include ActiveModel::SecurePassword
+    has_secure_password
+   
+
 	has_attached_file :stream, styles: {
     	thumb: '100x100>',
     	square: '200x200#',
@@ -9,8 +13,5 @@ class User < ActiveRecord::Base
 
 
    has_many :streams
-   
-   field :email, type: String
-   field :password_digest, type: String
    
 end
