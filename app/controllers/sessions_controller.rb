@@ -6,14 +6,14 @@ def new
 end
 
 def create
-	u = User.where(email: params[:email].first)
+	u = User.where(email: params[:user][:email]).first
 	if u && u.authenticate(params[:user][:password])
 		session[:user_id] = u.id.to_s
 			redirect_to users_path
 		else
 			# Go back to the login page
 			flash[:notice] = "There's something wrong here..."
-			redirect_to new_session_path
+			redirect_to root_path
 		end
 	end
 

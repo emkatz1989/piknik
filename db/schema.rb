@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118215446) do
+ActiveRecord::Schema.define(version: 20141118035456) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,10 +29,6 @@ ActiveRecord::Schema.define(version: 20141118215446) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "streams_file_name"
-    t.string   "streams_content_type"
-    t.integer  "streams_file_size"
-    t.datetime "streams_updated_at"
   end
 
 end
