@@ -1,0 +1,16 @@
+<%= form_for(@stream,{url:streams_path}) do |f|%>
+
+<div class="field">
+  <%= f.file_field :image %>
+  <%= f.submit "Submit your image" %>
+</div>
+<% end %>
+
+<% if current_user != nil %>
+		
+			<div class="user_box">
+				<% @streams.each do |p| %>
+					<%= image_tag p.image.url(:square) %> <br />
+				<% end %>
+			</div>
+<% end %>

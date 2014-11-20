@@ -36,10 +36,6 @@ ActiveRecord::Schema.define(version: 20141120053214) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "streams_file_name"
-    t.string   "streams_content_type"
-    t.integer  "streams_file_size"
-    t.datetime "streams_updated_at"
   end
 
 end

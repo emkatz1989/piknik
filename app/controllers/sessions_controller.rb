@@ -9,7 +9,7 @@ def create
 	u = User.where(email: params[:user][:email]).first
 	if u && u.authenticate(params[:user][:password])
 		session[:user_id] = u.id.to_s
-			redirect_to users_path
+			redirect_to new_stream_path
 		else
 			# Go back to the login page
 			flash[:notice] = "There's something wrong here..."
