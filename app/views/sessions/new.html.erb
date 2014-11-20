@@ -1,5 +1,3 @@
-<h1> Welcome to Piknik! </h1>
-
 <%= form_for(@user,{url:sessions_path}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -30,6 +28,7 @@
   <div class="col-md-4"></div>
   <div class="col-md-4 form-group divform">
 <%= form_for(@user) do |f| %>
+  <br>
   <%= f.email_field :email, :placeholder =>"Email" , :class => "form-control"%><br>
   <%= f.password_field :password, :placeholder =>"Password" , :class => "form-control"%><br>
     <div class="form-inline">

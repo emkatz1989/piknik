@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # scope 'api', defaults: {format: :json} do
     resources :users, only: [:index, :create, :update, :destroy]
     resources :streams
-    resources :sessions, only: [:create, :new, :destroy]
+    get 'logout', to: 'sessions#destroy', as: 'logout'
+  
+    resources :sessions
   # end
 
   root 'sessions#new'

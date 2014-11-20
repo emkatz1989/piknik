@@ -19,7 +19,7 @@ def create
 
 def destroy
 	reset_session
-	redirect_to new_session_path
+	redirect_to root_path
 	end
 end
 
