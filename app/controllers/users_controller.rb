@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def show
@@ -13,14 +14,38 @@ class UsersController < ApplicationController
 		@stream = Stream.new
 	end
 
-	def create
-		@user = User.create(user_params)
-		  if @user.save
-		  	redirect_to users_path, :notice => "User was successfully created!"
-		  else 
-		  	redirect_to root_path
-		  end
-		end
+	# def create
+	# 	@user = User.create(user_params)
+	# 	  if @user.save
+	# 	  	redirect_to streams_path, :notice => "User was successfully created!"
+	# 	  	current_user
+	# 	  else 
+	# 	  	redirect_to root_path
+	# 	  end
+	# 	end
+
+
+
+
+def create
+    @user = User.new(user_params)
+
+    # respond_to do |format|
+      if @user.save
+          session[:user_id] = @user.id.to_s
+          redirect_to streams_path, notice: 'User was successfully created.'
+        
+
+      # else
+      #   format.html { render :new }
+      #   format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  
+
+
+
+
 
 	def update
 		@user.update_attributes(user_params)
