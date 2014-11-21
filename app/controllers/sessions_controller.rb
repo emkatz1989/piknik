@@ -14,8 +14,8 @@ def create
 			# Go back to the login page
 			flash[:notice] = "There's something wrong here..."
 			redirect_to root_path
-		end
 	end
+end
 
 
 
