@@ -15,6 +15,8 @@ describe User do
     		for(:email)
     end
 
+    it { should have_many(:streams) }
+
 	# it { should ensure_length_of(:email).is_at_least(6) }
 
 	# it { should validate_presence_of(:password).is_at_most(20) }
