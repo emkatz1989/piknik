@@ -10,12 +10,12 @@ def create
 	if u && u.authenticate(params[:user][:password])
 		session[:user_id] = u.id.to_s
 			redirect_to users_path
-		else
-			# Go back to the login page
+	else
+		# Go back to the login page
 			flash[:notice] = "There's something wrong here..."
 			redirect_to root_path
-		end
 	end
+end
 
 
 
