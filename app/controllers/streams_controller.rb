@@ -2,6 +2,7 @@ class StreamsController < ApplicationController
 
 	def new
 		@stream = Stream.new
+		create
 	end
 
 	def index
@@ -18,9 +19,9 @@ class StreamsController < ApplicationController
 	end
 
 	def create
-		@stream = Stream.new(stream_params)
+		@stream = Stream.new(params[:user_id])
 		if @stream.save
-			redirect_to users_path
+			redirect_to edit_stream_path(self)
 		else
 			render 'index'
 		end
@@ -33,6 +34,6 @@ class StreamsController < ApplicationController
 	private
 
 	def stream_params
-		params.require(:stream).permit(:user_id, :name, :description, :image)
+		params.require(:stream).permit(:user_id, :name, :description)
 	end
 end
