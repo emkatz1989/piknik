@@ -4,24 +4,29 @@ class StreamsController < ApplicationController
 		@stream = Stream.new
 		create
 	end
+	
+	def edit
+		@stream = Stream.find(params[:id])
+	end
 
 	def index
-		@streams = Stream.all
+		@stream = Stream.find(params[:id])
+		redirect_to edit_stream_path(:stream)
 	end
 
 	def update
 		@stream = Stream.find(params[:id])
 		if @stream.update_attributes(stream_params)
-		redirect_to streams_path
+			redirect_to streams_path
 		else
-		render 'edit'
+			render 'edit'
 		end
 	end
 
 	def create
 		@stream = Stream.new(params[:user_id])
 		if @stream.save
-			redirect_to edit_stream_path(self)
+			redirect_to edit_stream_path(@stream)
 		else
 			render 'index'
 		end
