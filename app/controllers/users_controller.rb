@@ -4,8 +4,8 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def show
-		@streams = Stream.all
 		@user = User.find(params[:id])
+		@streams = Stream.where(:user_id => @user.id)
 	end
 
 	def edit
