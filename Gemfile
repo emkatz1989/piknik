@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 
  gem 'paperclip'
 
+gem 'factory_girl_rails'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'shoulda-matchers', require: false
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
