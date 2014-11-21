@@ -1,0 +1,11 @@
+<% @streams.each do |stream|%>
+	<% if stream.user_id == @user.id%>
+		<%= stream.stream %>
+		<%= stream.name %>
+		<%= stream.description %>
+		<%= link_to "edit", edit_stream_path(stream)%>
+	<% end %>
+<% end %><br>
+
+
+<%= link_to "Add a Stream", new_stream_path  %>

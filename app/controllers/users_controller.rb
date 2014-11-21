@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 	def show
+		@streams = Stream.all
+		@user = User.find(params[:id])
 	end
 
 	def edit
@@ -33,8 +35,7 @@ def create
     # respond_to do |format|
       if @user.save
           session[:user_id] = @user.id.to_s
-          redirect_to streams_path, notice: 'User was successfully created.'
-        
+          redirect_to user_path(@user)       
 
       # else
       #   format.html { render :new }

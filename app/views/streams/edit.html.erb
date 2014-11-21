@@ -1,0 +1,17 @@
+<%= form_for @stream do |f| %>
+		
+		<%=f.text_field :name, :class => "form-control", :placeholder => "Name"%><br>
+		<%=f.text_field :description, :class => "form-control", :placeholder => "Description"%><br>
+		<%=f.hidden_field :user_id, :value => current_user.id%>
+		<div class="field">
+  			<%= f.file_field :image %>
+		</div>
+
+
+
+
+
+
+		<%= f.submit "Submit Stream", :class => "btn btn-default pull-left"%>
+
+<% end %>
