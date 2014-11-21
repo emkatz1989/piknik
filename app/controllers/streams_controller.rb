@@ -15,15 +15,17 @@ class StreamsController < ApplicationController
 	end
 
 	def update
+		
 		@stream = Stream.find(params[:id])
 		if @stream.update_attributes(stream_params)
-			redirect_to stream_path(:stream)
+			redirect_to user_path(@stream.user_id)
 		else
 			render 'edit'
 		end
 	end
 
 	def create
+		@user_id = current_user.id
 		@stream = Stream.new(params[:user_id])
 		if @stream.save
 			redirect_to edit_stream_path(@stream)
