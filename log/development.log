@@ -5336,3 +5336,104 @@ Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-19 22:22:32 -080
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-19 22:22:32 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-20 13:32:51 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (51.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (31.2ms)
+  [1m[35mUser Load (37.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 331ms (Views: 227.5ms | ActiveRecord: 64.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 13:32:53 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:53 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:53 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:53 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:53 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ew33PcFnLRgL9TcWrYvuG7IL5mcTPE1/EX6v3sKL++E=", "user"=>{"email"=>"rajangdavis@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (23.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'rajangdavis@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/streams/new
+Completed 302 Found in 100ms (ActiveRecord: 23.3ms)
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+Processing by StreamsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 1  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mStream Load (38.2ms)[0m  [1mSELECT "streams".* FROM "streams"[0m
+  Rendered streams/new.html.erb within layouts/application (64.4ms)
+Completed 200 OK in 128ms (Views: 52.9ms | ActiveRecord: 41.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 13:32:55 -0800
+
+
+Started GET "/logout" for 127.0.0.1 at 2014-11-20 13:33:02 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-20 13:33:02 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TBsFBQcBgaBlB3Y8Ixl5ZNWWC6msJW1AJkYp8uRaXRU=", "user"=>{"email"=>"asd@asd.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (9.2ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-11-20 21:33:07.490745"], ["email", "asd@asd.com"], ["password_digest", "$2a$10$Ng7i92aw1DB87i8d/nxtkOefdMgznQ95U2TjbR1V6fcoM6sLa3Yr6"], ["updated_at", "2014-11-20 21:33:07.490745"]]
+  [1m[36m (22.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users
+Completed 302 Found in 125ms (ActiveRecord: 32.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 30ms (Views: 28.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 13:33:07 -0800
