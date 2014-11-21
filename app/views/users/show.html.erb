@@ -1,18 +1,11 @@
-<% if @streams.count == 0%>
-	<% if current_user.id == @user.id %>
-		<p>You currently have no streams</p>
-	<% else%>
-		<p>This user has no streams</p>
+<% @streams.each do |stream|%>
+	<% if stream.user_id == @user.id%>
+		<%= stream.stream %>
+		<%= stream.name %>
+		<%= stream.description %>
+		<%= link_to "edit", edit_stream_path(stream)%>
 	<% end %>
-<% else %>
-	<% @streams.each do |stream|%>
-		<% if stream.user_id == @user.id%>
-			<%= stream.stream %>
-			<%= stream.name %>
-			<%= stream.description %>
-			<%= link_to "edit", edit_stream_path(stream)%>
-		<% end %>
-	<% end %>
-<% end %>
+<% end %><br>
+
 
 <%= link_to "Add a Stream", new_stream_path  %>

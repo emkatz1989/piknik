@@ -17,7 +17,7 @@ class StreamsController < ApplicationController
 	def update
 		@stream = Stream.find(params[:id])
 		if @stream.update_attributes(stream_params)
-			redirect_to streams_path
+			redirect_to stream_path(:stream)
 		else
 			render 'edit'
 		end

@@ -8414,3 +8414,1112 @@ Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 18:59:35 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 18:59:35 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-20 19:01:12 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 111ms (Views: 86.2ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:01:12 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:13 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXi1TD6/tons3Uxt1PNJ2O2wQVxp4/9BJg/4xL5qe4c=", "user"=>{"email"=>"rajangdavis@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'rajangdavis@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 117ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "streams"
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT "streams".* FROM "streams"[0m
+  Rendered users/show.html.erb within layouts/application (16.2ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 73ms (Views: 48.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:01:14 -0800
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 19:01:15 -0800
+Processing by StreamsController#new as HTML
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-11-21 03:01:15.981768"], ["updated_at", "2014-11-21 03:01:15.981768"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/streams/22/edit
+Completed 302 Found in 13ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:01:15 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 47ms (Views: 43.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:02:53 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.5ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/rajandavis/Desktop/piknik/app/views/streams/edit.html.erb:1: syntax error, unexpected keyword_do_block
+...r.append=  form_for @stream, do |f|@output_buffer.safe_appen...
+...                               ^
+/Users/rajandavis/Desktop/piknik/app/views/streams/edit.html.erb:6: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  actionview (4.1.1) lib/action_view/template.rb:297:in `module_eval'
+  actionview (4.1.1) lib/action_view/template.rb:297:in `compile'
+  actionview (4.1.1) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `synchronize'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.1.1) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:03:39 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/rajandavis/Desktop/piknik/app/views/streams/edit.html.erb:1: syntax error, unexpected keyword_do_block
+...append=  form_for (@stream), do |f|@output_buffer.safe_appen...
+...                               ^
+/Users/rajandavis/Desktop/piknik/app/views/streams/edit.html.erb:6: syntax error, unexpected keyword_ensure, expecting end-of-input):
+  actionview (4.1.1) lib/action_view/template.rb:297:in `module_eval'
+  actionview (4.1.1) lib/action_view/template.rb:297:in `compile'
+  actionview (4.1.1) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `synchronize'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.1.1) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.6ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (56.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 94ms (Views: 91.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:04:54 -0800
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.5ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:02 -0800
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:06:10 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.5ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 36.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:06:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:11 -0800
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:06:44 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (6.7ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 69ms (Views: 58.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:44 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:06:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:45 -0800
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 38ms (Views: 35.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:06:59 -0800
+
+
+Started GET "/streams/22/edit" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mStream Load (0.3ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered streams/edit.html.erb within layouts/application (7.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 49.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:55 -0800
+
+
+Started PATCH "/streams/22" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXi1TD6/tons3Uxt1PNJ2O2wQVxp4/9BJg/4xL5qe4c=", "stream"=>{"name"=>"", "description"=>""}, "commit"=>"Submit Stream", "id"=>"22"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 22]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  UPDATE "streams" SET "description" = $1, "name" = $2, "updated_at" = $3 WHERE "streams"."id" = 22  [["description", ""], ["name", ""], ["updated_at", "2014-11-21 03:07:56.675757"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/streams/stream
+Completed 302 Found in 10ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/streams/stream" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+Processing by StreamsController#show as HTML
+  Parameters: {"id"=>"stream"}
+  Rendered streams/show.html.erb within layouts/application (0.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:07:56 -0800
+
+
+Started PATCH "/streams/22" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXi1TD6/tons3Uxt1PNJ2O2wQVxp4/9BJg/4xL5qe4c=", "stream"=>{"name"=>"This is a test", "description"=>"this was my test thing blah blah blah"}, "commit"=>"Submit Stream", "id"=>"22"}
+  [1m[36mStream Load (0.8ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "streams" SET "description" = $1, "name" = $2, "updated_at" = $3 WHERE "streams"."id" = 22[0m  [["description", "this was my test thing blah blah blah"], ["name", "This is a test"], ["updated_at", "2014-11-21 03:08:13.775504"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/stream
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/streams/stream" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+Processing by StreamsController#show as HTML
+  Parameters: {"id"=>"stream"}
+  Rendered streams/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:08:13 -0800
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "streams"
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT "streams".* FROM "streams"[0m
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (3.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:08:24 -0800
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mStream Load (0.7ms)[0m  [1mSELECT "streams".* FROM "streams"[0m
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 41ms (Views: 37.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:36 -0800
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "2"]]
+  [1m[36mStream Load (0.6ms)[0m  [1mSELECT "streams".* FROM "streams"[0m
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 42ms (Views: 38.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:09:38 -0800
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 19:09:50 -0800
+Processing by StreamsController#new as HTML
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-11-21 03:09:50.926634"], ["updated_at", "2014-11-21 03:09:50.926634"]]
+  [1m[36m (1.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/streams/23/edit
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/streams/23/edit" for 127.0.0.1 at 2014-11-20 19:09:50 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 23]]
+  Rendered streams/edit.html.erb within layouts/application (3.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:11:18 -0800
+
+SyntaxError (/Users/rajandavis/Desktop/piknik/config/routes.rb:5: syntax error, unexpected [, expecting keyword_do or '{' or '('
+    resources :streams, except [:edit]
+                                ^):
+  activesupport (4.1.1) lib/active_support/dependencies.rb:241:in `load'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:241:in `block in load'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:232:in `load_dependency'
+  activesupport (4.1.1) lib/active_support/dependencies.rb:241:in `load'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:40:in `block in load_paths'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:40:in `each'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:40:in `load_paths'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:16:in `reload!'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:26:in `block in updater'
+  activesupport (4.1.1) lib/active_support/file_update_checker.rb:75:in `call'
+  activesupport (4.1.1) lib/active_support/file_update_checker.rb:75:in `execute'
+  railties (4.1.1) lib/rails/application/routes_reloader.rb:7:in `execute'
+  railties (4.1.1) lib/rails/application/finisher.rb:83:in `block (2 levels) in <module:Finisher>'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:438:in `instance_exec'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:438:in `block in make_lambda'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:184:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:184:in `block in simple'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:185:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:185:in `block in simple'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:185:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:185:in `block in simple'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:83:in `prepare!'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:71:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mStream Load (0.6ms)[0m  SELECT "streams".* FROM "streams"
+  Rendered users/show.html.erb within layouts/application (12.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 45.6ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:11:44 -0800
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 19:11:46 -0800
+Processing by StreamsController#new as HTML
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-11-21 03:11:46.467664"], ["updated_at", "2014-11-21 03:11:46.467664"]]
+  [1m[35m (2.4ms)[0m  COMMIT
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `edit_stream_path' for #<StreamsController:0x007fb327a16440>):
+  app/controllers/streams_controller.rb:29:in `create'
+  app/controllers/streams_controller.rb:5:in `new'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.9ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (23.9ms)
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 19:11:46 -0800
+Processing by StreamsController#new as HTML
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-11-21 03:11:46.550341"], ["updated_at", "2014-11-21 03:11:46.550341"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 8ms
+
+NoMethodError (undefined method `edit_stream_path' for #<StreamsController:0x007fb327810038>):
+  app/controllers/streams_controller.rb:29:in `create'
+  app/controllers/streams_controller.rb:5:in `new'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.4ms)
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+Processing by StreamsController#new as HTML
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-11-21 03:12:05.457362"], ["updated_at", "2014-11-21 03:12:05.457362"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/26/this_is_not_an_edit_page
+Completed 302 Found in 19ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  Rendered streams/edit.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 73ms (Views: 67.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:12:05 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:12:40 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (17.4ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (undefined method `hidden_tag' for #<ActionView::Helpers::FormBuilder:0x007fb327e4d220>):
+    2: 		
+    3: 		<%=f.text_field :name, :class => "form-control", :placeholder => "Name"%><br>
+    4: 		<%=f.text_area :description, :class => "form-control", :placeholder => "Description"%><br>
+    5: 		<%=f.hidden_tag :user_id, current_user.id%>
+    6: 		<%= f.submit "Submit Stream", :class => "btn btn-default pull-left"%>
+    7: 
+    8: <% end %>
+  app/views/streams/edit.html.erb:5:in `block in _app_views_streams_edit_html_erb__1524742266017838054_70203722638420'
+  app/views/streams/edit.html.erb:1:in `_app_views_streams_edit_html_erb__1524742266017838054_70203722638420'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (15.8ms)
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:12:48 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (5.7ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `merge' for 2:Fixnum):
+    2: 		
+    3: 		<%=f.text_field :name, :class => "form-control", :placeholder => "Name"%><br>
+    4: 		<%=f.text_area :description, :class => "form-control", :placeholder => "Description"%><br>
+    5: 		<%=f.hidden_field :user_id, current_user.id%>
+    6: 		<%= f.submit "Submit Stream", :class => "btn btn-default pull-left"%>
+    7: 
+    8: <% end %>
+  app/views/streams/edit.html.erb:5:in `block in _app_views_streams_edit_html_erb__1524742266017838054_70203696505460'
+  app/views/streams/edit.html.erb:1:in `_app_views_streams_edit_html_erb__1524742266017838054_70203696505460'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.7ms)
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:18 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:13:29 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (59.8ms)
+Completed 200 OK in 103ms (Views: 100.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:36 -0800
+
+
+Started PATCH "/streams/26" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cXi1TD6/tons3Uxt1PNJ2O2wQVxp4/9BJg/4xL5qe4c=", "stream"=>{"name"=>"This is a test", "description"=>"this is a test\r\n", "user_id"=>"2"}, "commit"=>"Submit Stream", "id"=>"26"}
+  [1m[36mStream Load (0.7ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 26]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "streams" SET "description" = $1, "name" = $2, "updated_at" = $3, "user_id" = $4 WHERE "streams"."id" = 26[0m  [["description", "this is a test\r\n"], ["name", "This is a test"], ["updated_at", "2014-11-21 03:13:45.046782"], ["user_id", 2]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/stream
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/streams/stream" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+Processing by StreamsController#show as HTML
+  Parameters: {"id"=>"stream"}
+  Rendered streams/show.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:13:45 -0800
+
+
+Started GET "/logout" for 127.0.0.1 at 2014-11-20 19:13:49 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-20 19:13:49 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (4.4ms)
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 44ms (Views: 41.8ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I5cnvruIZM4GX9nmu/6F9eBPzzeLF4yHtEczhomUW10=", "user"=>{"email"=>"rajangdavis@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'rajangdavis@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 114ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mStream Load (0.5ms)[0m  SELECT "streams".* FROM "streams"
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 41ms (Views: 36.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:13:50 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:13:52 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mStream Load (0.3ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "2"]]
+  [1m[35mStream Load (0.6ms)[0m  SELECT "streams".* FROM "streams"
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:14:09 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:18:51 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mStream Load (0.5ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mStream Load (0.3ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (56.3ms)
+Completed 200 OK in 93ms (Views: 90.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:20:34 -0800
+
+
+Started GET "/streams/26/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 26]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 2  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800

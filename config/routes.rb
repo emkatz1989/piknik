@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   # scope 'api', defaults: {format: :json} do
     resources :users, only: [:index, :create, :update, :destroy, :show]
-    resources :streams
+    resources :streams, except: [:edit]
+    get 'streams/:id/this_is_not_an_edit_page' => "streams#edit", as: :edit_stream
     get 'logout', to: 'sessions#destroy', as: 'logout'
   
     resources :sessions
