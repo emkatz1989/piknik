@@ -9523,3 +9523,349 @@ Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-20 19:44:14 -0800
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 11:48:56 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (19.6ms)
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 16  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 117ms (Views: 100.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 11:48:57 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 11:48:57 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 11:48:57 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 11:48:57 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 11:48:57 -0800
+
+
+Started GET "/logout" for 127.0.0.1 at 2014-11-21 11:48:59 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 11:48:59 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-21 11:49:06 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x/15jaWepiTjvdXRPQibqofBQ7dvnyhzGDAp6kgLpzM=", "user"=>{"email"=>"eric@wdi.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'eric@wdi.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 500 Internal Server Error in 5ms
+
+BCrypt::Errors::InvalidHash (invalid hash):
+  app/controllers/sessions_controller.rb:10:in `create'
+
+
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.3ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-21 11:49:29 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x/15jaWepiTjvdXRPQibqofBQ7dvnyhzGDAp6kgLpzM=", "user"=>{"email"=>"eric@wdi.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Can't verify CSRF token authenticity
+Completed 422 Unprocessable Entity in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  actionpack (4.1.1) lib/action_controller/metal/request_forgery_protection.rb:176:in `handle_unverified_request'
+  actionpack (4.1.1) lib/action_controller/metal/request_forgery_protection.rb:202:in `handle_unverified_request'
+  actionpack (4.1.1) lib/action_controller/metal/request_forgery_protection.rb:197:in `verify_authenticity_token'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:424:in `block in make_lambda'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:160:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:160:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.4ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/erickatz/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:40 -0800
+
+
+Started POST "/sessions" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cd0N2mSK37C0YgTS7PA+RNCcNJ23ajvAaAppMJNSdlM=", "user"=>{"email"=>"erik@abc.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'erik@abc.com'  ORDER BY "users"."id" ASC LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 88ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" IS NULL  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 11:49:50 -0800
+
+
+Started POST "/users" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cd0N2mSK37C0YgTS7PA+RNCcNJ23ajvAaAppMJNSdlM=", "user"=>{"email"=>"ab@a.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."email" = 'ab@a.com' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("created_at", "email", "password_digest", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["created_at", "2014-11-21 19:50:04.503032"], ["email", "ab@a.com"], ["password_digest", "$2a$10$/BLKuAtbL93xfCkQFboASOC8BSBm2VanLCxwNl5Gfk/.COLyHLGkG"], ["updated_at", "2014-11-21 19:50:04.503032"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 101ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/users/17" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "17"]]
+  [1m[35mStream Load (1.5ms)[0m  SELECT "streams".* FROM "streams"
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 35ms (Views: 25.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 11:50:04 -0800
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-21 11:50:16 -0800
+Processing by StreamsController#new as HTML
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-11-21 19:50:16.047290"], ["updated_at", "2014-11-21 19:50:16.047290"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/1/this_is_not_an_edit_page
+Completed 302 Found in 16ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/streams/1/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 11:50:16 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 34ms (Views: 31.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-21 11:50:35 -0800
+Processing by StreamsController#new as HTML
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"  [["created_at", "2014-11-21 19:50:35.298531"], ["updated_at", "2014-11-21 19:50:35.298531"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/streams/2/this_is_not_an_edit_page
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/streams/2/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 11:50:35 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mStream Load (0.4ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 31ms (Views: 29.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/streams/new" for 127.0.0.1 at 2014-11-21 12:05:53 -0800
+Processing by StreamsController#new as HTML
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "streams" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2014-11-21 20:05:53.109981"], ["updated_at", "2014-11-21 20:05:53.109981"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/3/this_is_not_an_edit_page
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/streams/3/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 12:05:53 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStream Load (0.3ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/streams/3" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cd0N2mSK37C0YgTS7PA+RNCcNJ23ajvAaAppMJNSdlM=", "stream"=>{"name"=>"eric", "description"=>"yo", "user_id"=>"17", "image"=>#<ActionDispatch::Http::UploadedFile:0x007faccee6efb0 @tempfile=#<Tempfile:/var/folders/4k/9c0d6xz96mn688nvr7kyg2240000gn/T/RackMultipart20141121-9319-10qhix8>, @original_filename="Puppy-images.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"stream[image]\"; filename=\"Puppy-images.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Stream", "id"=>"3"}
+  [1m[36mStream Load (1.0ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 3]]
+Unpermitted parameters: image
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "streams" SET "description" = $1, "name" = $2, "updated_at" = $3, "user_id" = $4 WHERE "streams"."id" = 3[0m  [["description", "yo"], ["name", "eric"], ["updated_at", "2014-11-21 20:07:29.300798"], ["user_id", 17]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/streams/stream
+Completed 302 Found in 8ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/streams/stream" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+Processing by StreamsController#show as HTML
+  Parameters: {"id"=>"stream"}
+  Rendered streams/show.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 12:07:29 -0800
+
+
+Started GET "/users/17" for 127.0.0.1 at 2014-11-21 12:07:36 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 17]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "17"]]
+  [1m[35mStream Load (0.4ms)[0m  SELECT "streams".* FROM "streams"
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1[0m
+Completed 200 OK in 39ms (Views: 36.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 17  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 13:13:05 -0800
