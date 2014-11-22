@@ -18,6 +18,14 @@
     padding: 0 !important;
 }
 
+img{
+	width: 900px;
+
+}
+
+#selfie{
+	width:900px;
+}
 
 #scaleSlider{
 position: absolute;
@@ -64,6 +72,18 @@ background: rgba(255, 255, 255, .4);
 }
 
 .ui-slider .ui-slider-handle{
+	background: rgba(255, 255, 255, 1);
+	left: 0px;
+	width: 60px;
+    height: 60px;
+    border-radius: 90px;
+    text-align: center;
+    cursor: ns-resize;
+    border: 0px;
+
+}
+
+#ui-slider #ui-slider-handle{
 	background: rgba(255, 255, 255, 1);
 	left: 0px;
 	width: 60px;
@@ -328,12 +348,12 @@ background: rgba(255, 255, 255, .4);
 }*/
 
 .streamCanvas{
-	position: absolute;
+
 	left: -1px !important;
 	border: 0px;
 	background-color: red;
-	height: 640px;
-	width: 640px;
+/*	height: 640px !important;
+	width: 640px !important;*/
 
 }
 
@@ -400,7 +420,6 @@ a{
 #canvas4{
 	background-color: yellow;
 }
-
 
 
 
