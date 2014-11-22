@@ -3,8 +3,57 @@
 		<%=f.text_field :name, :class => "form-control", :placeholder => "Name"%><br>
 		<%=f.text_field :description, :class => "form-control", :placeholder => "Description"%><br>
 		<%=f.hidden_field :user_id, :value => current_user.id%>
-		<div class="field">
+		<div class="upload">
   			<%= f.file_field :image, :id => "imageLoader"%>
+  		<table class="container">
+    
+    
+
+    <tr>
+      <td class="sort-cell">
+        <canvas id="imageCanvas" width="640" height="640"></canvas>
+        <div class="scale" id="scaleSlider"></div>
+        <div class="rotate" id="rotateSlider"></div>
+        <button id="image-settings">
+                  <i class="fa fa-sliders fa-3x"></i>
+        </button>
+        <a id="imageSaver" href="#">Save image</a>
+<!--         <button id="save">SAVE</button> -->
+        <button id="sort-handle">
+          <i class="fa fa-sort fa-3x"></i>
+        </button>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="sort-cell">
+        <canvas id="c" width="640" height="640">
+          <img src="emily.jpg" id="selfie">
+        </canvas>
+
+        <div class="scale" id="scaleSlider"></div>
+        <div class="rotate" id="rotateSlider"></div>
+        <button id="image-settings">
+                  <i class="fa fa-sliders fa-3x"></i>
+        </button>
+        <button id="save">SAVE</button>
+        <button id="sort-handle">
+          <i class="fa fa-sort fa-3x"></i>
+        </button>
+
+      </td>
+    </tr>
+    <tr>
+          <td class="sort-cell"><button id="image-settings"><i class="fa fa-sliders fa-3x"></i></button><button id="sort-handle"><i class="fa fa-sort fa-3x"></i></button><img src="emily2.jpg"></td>
+
+    </tr>
+
+
+
+
+</table>
+
+
 		</div>
 
 		<%= f.submit "Submit Stream", :class => "btn btn-default pull-left"%>
