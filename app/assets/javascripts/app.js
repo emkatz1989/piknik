@@ -1,27 +1,51 @@
 //NEW CANVAS //////////////
 
-var canvas1 = new fabric.Canvas('imageCanvas', {
-    backgroundColor: 'rgb(240,240,240)'
-});
+canvas = new fabric.Canvas('c');
 
-var imageLoader = document.getElementById('imageLoader');
-imageLoader.addEventListener('change', handleImage, false);
-
-function handleImage(e) {
+document.getElementById('imgLoader').onchange = function handleImage(e) {
     var reader = new FileReader();
-    reader.onload = function (event) {
-        var img = new Image();
-        img.onload = function () {
-            var imgInstance = new fabric.Image(img, {
-                scaleX: 1,
-                scaleY: 1
-            })
-            canvas1.add(imgInstance);
+    reader.onload = function (event) { console.log('fdsf');
+        var imgObj = new Image();
+        imgObj.src = event.target.result;
+        imgObj.onload = function () {
+            // start fabricJS stuff
+            
+            var image = new fabric.Image(imgObj);
+            image.set({
+                left: 250,
+                top: 250,
+                angle: 20,
+                padding: 10,
+                cornersize: 10
+            });
+            //image.scale(getRandomNum(0.1, 0.25)).setCoords();
+            canvas.add(image);
+            
+            // end fabricJS stuff
         }
-        img.src = event.target.result;
+        
     }
     reader.readAsDataURL(e.target.files[0]);
 }
+
+// var imageLoader = $('#imageLoader');
+// imageLoader.addEventListener('change', handleImage, false);
+
+// function handleImage(e) {
+//     var reader = new FileReader();
+//     reader.onload = function (event) {
+//         var img = new Image();
+//         img.onload = function () {
+//             var imgInstance = new fabric.Image(img, {
+//                 scaleX: 1,
+//                 scaleY: 1
+//             })
+//             canvas1.add(imgInstance);
+//         }
+//         img.src = event.target.result;
+//     }
+//     reader.readAsDataURL(e.target.files[0]);
+// }
 
 
 ////save image

@@ -13085,3 +13085,332 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 21:00:54
 
 
 Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 21:00:54 -0800
+
+
+Started GET "/streams/48/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[35mStream Load (0.6ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1[0m
+  Rendered streams/edit.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 222ms (Views: 167.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+
+Started GET "/images/square/missing.png" for 127.0.0.1 at 2014-11-21 23:27:11 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/square/missing.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.5ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.9ms)
+
+
+Started PATCH "/streams/48" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5kmDtecEzIhruyzcTSX97iABpxGehW/ba371RyXNTU=", "stream"=>{"name"=>"asdasd", "description"=>"asdasd", "user_id"=>"3"}, "image"=>{"image"=>#<ActionDispatch::Http::UploadedFile:0x007ff2afb045b0 @tempfile=#<Tempfile:/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/RackMultipart20141121-12838-1ijcrct>, @original_filename="JYIZyBF.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"image[image]\"; filename=\"JYIZyBF.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Stream", "id"=>"48"}
+  [1m[35mStream Load (0.5ms)[0m  SELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1  [["id", 48]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT "streams".* FROM "streams"  WHERE "streams"."user_id" = 3[0m
+  Rendered users/show.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 23:27:17 -0800
+
+
+Started GET "/streams/48/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 23:27:19 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 30ms (Views: 28.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/square/missing.png" for 127.0.0.1 at 2014-11-21 23:27:19 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/square/missing.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (23.3ms)
+
+
+Started GET "/streams/48/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 35.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 23:29:28 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 23:29:29 -0800
+
+
+Started GET "/images/square/missing.png" for 127.0.0.1 at 2014-11-21 23:29:29 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/square/missing.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.9ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.4ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.6ms)
+
+
+Started GET "/streams/48/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mStream Load (0.5ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+
+Started GET "/images/square/missing.png" for 127.0.0.1 at 2014-11-21 23:31:01 -0800
+
+ActionController::RoutingError (No route matches [GET] "/images/square/missing.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/rajandavis/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (22.2ms)
+
+
+Started PATCH "/streams/48" for 127.0.0.1 at 2014-11-21 23:31:06 -0800
+Processing by StreamsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j5kmDtecEzIhruyzcTSX97iABpxGehW/ba371RyXNTU=", "stream"=>{"name"=>"asdasd", "description"=>"asdasd", "user_id"=>"3", "image"=>#<ActionDispatch::Http::UploadedFile:0x007ff2ace48210 @tempfile=#<Tempfile:/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/RackMultipart20141121-12838-42jkas>, @original_filename="JYIZyBF.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"stream[image]\"; filename=\"JYIZyBF.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit Stream", "id"=>"48"}
+  [1m[36mStream Load (0.6ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35m (0.1ms)[0m  BEGIN
+Command :: file -b --mime '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-112ey4v.jpg'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]'
+Command :: convert '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' -auto-orient -resize "100x100>" '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-wcskkx'
+Command :: file -b --mime '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-wcskkx'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]'
+Command :: convert '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' -auto-orient -resize "x200" -crop "200x200+60+0" +repage '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-13b3ib6'
+Command :: file -b --mime '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-13b3ib6'
+Command :: identify -format '%wx%h,%[exif:orientation]' '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' 2>/dev/null
+Command :: identify -format %m '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]'
+Command :: convert '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt.jpg[0]' -auto-orient -resize "300x300>" '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-rrnsg8'
+Command :: file -b --mime '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-aevlmt20141121-12838-rrnsg8'
+Command :: file -b --mime '/var/folders/2_/mp8nrxjs1gv3y2c9bff8xscc0000gn/T/36ba871f6a5d871632f521bcd2cffcbb20141121-12838-9xv1sn.jpg'
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "streams" SET "image_content_type" = $1, "image_file_name" = $2, "image_file_size" = $3, "image_updated_at" = $4, "updated_at" = $5 WHERE "streams"."id" = 48[0m  [["image_content_type", "image/jpeg"], ["image_file_name", "JYIZyBF.jpg"], ["image_file_size", 350973], ["image_updated_at", "2014-11-22 07:31:06.204079"], ["updated_at", "2014-11-22 07:31:07.071725"]]
+  [1m[35m (2.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 929ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", "3"]]
+  [1m[36mStream Load (0.4ms)[0m  [1mSELECT "streams".* FROM "streams"  WHERE "streams"."user_id" = 3[0m
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+Completed 200 OK in 43ms (Views: 39.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/assets/app.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-21 23:31:07 -0800
+
+
+Started GET "/streams/48/this_is_not_an_edit_page" for 127.0.0.1 at 2014-11-21 23:31:08 -0800
+Processing by StreamsController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mStream Load (0.3ms)[0m  [1mSELECT  "streams".* FROM "streams"  WHERE "streams"."id" = $1 LIMIT 1[0m  [["id", 48]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = 3  ORDER BY "users"."id" ASC LIMIT 1
+  Rendered streams/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 35ms (Views: 32.1ms | ActiveRecord: 0.9ms)
