@@ -2,11 +2,24 @@
 		
 		<%=f.text_field :name, :class => "form-control", :placeholder => "Name"%><br>
 		<%=f.text_field :description, :class => "form-control", :placeholder => "Description"%><br>
-		<%=f.hidden_field :user_id, :value => current_user.id%>
-		<%=f.file_field :image%> <br>
+		<div class="uploadContainer">
+<form action="" method="post" enctype="multipart/form-data">
+    <div class="upload">
+        <input type="file" id="imgLoader" />
 
-  
-				<%= image_tag @stream.image.url(:square)%><br>
+    </div>
+</form>
+</div>
+
+ 
+<table id="streamsTable" class="container">
+  <tbody >
+ 
+<!-- Canvases will go here in DOM -->
+
+
+  </tbody>
+</table>
 			
 		
 	

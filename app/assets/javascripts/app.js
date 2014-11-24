@@ -1,25 +1,80 @@
-//NEW CANVAS //////////////
+var image;
 
-canvas = new fabric.Canvas('c');
+$(document).ready(function() {
+    var counter = 1;
+
+
+    function loadImage() {
+        counter += 1;
+
+        /////////JQUERY ATTACH NEW HTML TO DOM
+
+
+
+        $('#streamsTable').find('tbody')
+
+        .append($('<div class="sort-cell">')
+            .append($("<canvas id='canvas" + counter + "' rel='"+counter+"'>"))
+            // .append($("<img src='grid.png' rel='"+counter+"' id='grid'>"))
+            .append($("<div rel='"+counter+"' class='scale'>"))
+            .append($("<div rel='"+counter+"' class='rotate'>"))
+            .append($("<div rel='"+counter+"' class='sort-handle' id='sort-handle" + counter + "'></div>"))
+            .append($("<div rel='"+counter+"' class='image-settings' id='image-settings" + counter + "'></div>"))
+        );
+
+
+
+        ///////FABRIC MAKE CANVAS AND IMAGE INSTANCE
+
+var canvas = new fabric.Canvas('canvas' + counter);
+        canvas.setHeight(640);
+        canvas.setWidth(640);
+        canvas.setBackgroundColor('black');
+
+
+////HIDE ROTATE AND SCALE
+
+$('.scale').hide();
+$('.rotate').hide();
+
+
+////LOAD IMAGE
+
 
 document.getElementById('imgLoader').onchange = function handleImage(e) {
     var reader = new FileReader();
-    reader.onload = function (event) { console.log('fdsf');
+    reader.onload = function (event) { 
         var imgObj = new Image();
         imgObj.src = event.target.result;
         imgObj.onload = function () {
             // start fabricJS stuff
             
-            var image = new fabric.Image(imgObj);
+            image = new fabric.Image(imgObj);
             image.set({
-                left: 250,
-                top: 250,
-                angle: 20,
-                padding: 10,
-                cornersize: 10
+              left: 320,
+              top: 320,
+            originX: 'center',
+            originY: 'center',
+            hasBorders : false,
+            hasControls : false,
+            hasRotatingPoint : false,
+
             });
-            //image.scale(getRandomNum(0.1, 0.25)).setCoords();
+
+
             canvas.add(image);
+            canvas.setActiveObject(image);
+            // image.lockMovementX = true;
+            // image.lockMovementY = true;
+
+            
+            // var gridElement = document.getElementById('.grid');
+            // var gridInstance = new fabric.Image(gridElement, {
+            // left: 0,
+            //   top: 0,
+            // });
+            // canvas.add(gridInstance );
+
             
             // end fabricJS stuff
         }
@@ -28,183 +83,106 @@ document.getElementById('imgLoader').onchange = function handleImage(e) {
     reader.readAsDataURL(e.target.files[0]);
 }
 
-// var imageLoader = $('#imageLoader');
-// imageLoader.addEventListener('change', handleImage, false);
-
-// function handleImage(e) {
-//     var reader = new FileReader();
-//     reader.onload = function (event) {
-//         var img = new Image();
-//         img.onload = function () {
-//             var imgInstance = new fabric.Image(img, {
-//                 scaleX: 1,
-//                 scaleY: 1
-//             })
-//             canvas1.add(imgInstance);
-//         }
-//         img.src = event.target.result;
-//     }
-//     reader.readAsDataURL(e.target.files[0]);
-// }
 
 
-////save image
 
-var imageSaver = document.getElementById('imageSaver');
-imageSaver.addEventListener('click', saveImage, false);
+        canvas.calcOffset();
 
-function saveImage(e) {
-    this.href = canvas.toDataURL({
-        format: 'jpeg',
-        quality: 0.8
-    });
-    this.download = 'test.png'
-}
 
-//////////////////////// SORTABLE //////////
+        $('.scale[rel='+counter+']').slider({
+            animate: "fast",
+            orientation: "vertical",
+            min: 700,
+            max: 1000,
+            step: 1,
+            value: 800,
+            slide: function(event, ui) {
+                var activeObject = canvas.getActiveObject();
+                if (activeObject) {
+                    activeObject.height = ui.value;
+                    activeObject.width = ui.value;
+                    activeObject.setCoords();
+                    canvas.renderAll();
+
+
+                }
+            }
+
+        });
+
+        $('.rotate[rel='+counter+']').slider({
+            orientation: "vertical",
+            animate: "fast",
+            min: -30,
+            max: 30,
+            step: 1,
+            value: 0,
+            slide: function(event, ui) {
+                var activeObject = canvas.getActiveObject();
+                if (activeObject) {
+                    activeObject.angle = ui.value;
+                    activeObject.setCoords();
+                    canvas.renderAll();
+
+                }
+            }
+        });
+
+    
+$('.image-settings[rel='+counter+']').click(function() {
+  $('.scale').toggle();
+  $('.rotate').toggle();
+  $('.sort-handle').toggle();
+  // lockImages();
+  // $('#canvas [rel='+counter+']').image.lockMovementX = true;
+  // image.lockMovementX = false;
+  // image.lockMovementY = false;
+
+
+});
+
+
+
+
+    };
+
+ 
+
+
+    //////SORTABLE/////
 
     $("table tbody").sortable({
-    handle: '#sort-handle',
-    cancel: '',
-    axis: 'y',
-    placeholder: "placeholderX"
+        handle: '.sort-handle',
+        cancel: '',
+        axis: 'y',
+        placeholder: "placeholderX"
 
-}).disableSelection();
+    }).disableSelection();
+
+  //   function hideButtons(){
+
+  //     $('.scale[rel='+counter+']').hide( "fast", function() {
+  //   alert( "Animation complete." )
+  //   });
+
+  //      $('.rotate[rel='+counter+']').hide( "fast", function() {
+  //   alert( "Animation complete." )
+  //   });
+
+  // };
 
 
-//////////////CREATE CANVAS     
 
-var canvas = new fabric.Canvas('c');
 
-var imgElement = document.getElementById('selfie');
 
-var imgInstance = new fabric.Image(imgElement, {
-  left: 0,
-  top: 0,
-  lockUniScaling: true,
-  centeredRotation: true,
-  centeredScaling: true,
-  originX: 'center',
-  originY: 'center',
+
+    // $('.image-settings').click(hideButtons);
+
+
+    $('#imgLoader').click(loadImage);
+
+
+  
+
 });
-
-canvas.calcOffset();
-
-
-
-///////////DUMB BOUNDING BOX
-
-
-boundingBox = new fabric.Rect({
-    id: 'bounding-box',
-    width: 1000,
-    height: 1000,
-    left: -180,
-    top: -180,
-    hasBorders: false,
-    hasControls: false,
-    lockMovementX: true,
-    lockMovementY: true,
-    evented: false,
-    stroke: "black",
-    fill: "black",
-    selectable: false
-});
-
-this.canvas.add(boundingBox);
-
-
-/////////////ADDING IMAGE TO CANVAS
-
-canvas.add(imgInstance);
-imgInstance.center();
-imgInstance.centeredRotation = true;
-imgInstance.centeredScaling = true;
-canvas.setActiveObject(imgInstance);
-
-
-//////////ADDING GRID TO CANVAS (NOT FUNCTIONAL YET)
-
-addGrid = new fabric.Image({
-id: 'grid',
-width: 640,
-height: 640,
-left: 0,
-top: 0,
-hasBorders: false,
-hasControls: false,
-lockMovementX: true,
-lockMovementY: true,
-evented: false,
-stroke: "black",
-fill: "black",
-selectable: false
-})
-
-
-/////////////ROTATION SLIDER 
-
-$(function() {
-  $('.rotate').slider({
-    orientation: "vertical",
-    min: -30,
-    max: 30,
-    step: 1,
-    value: 0,
-    slide: function( event, ui ) {
-      var activeObject = canvas.getActiveObject();
-      if(activeObject) {
-        activeObject.angle = ui.value;
-        activeObject.setCoords();
-        canvas.renderAll();
-        logCanvas(canvas);
-        storeCanvas(canvas);
-      }
-    }
-  });
-});
-
-/////////////ROTATION SLIDER 
-
-$(function() {
-  $('.scale').slider({
-    orientation: "vertical",
-    min: 700,
-    max: 1000,
-    step: 1,
-    value: 800,
-    slide: function( event, ui ) {
-      var activeObject = canvas.getActiveObject();
-      if(activeObject) {
-        activeObject.height = ui.value;
-        activeObject.width = ui.value;
-        activeObject.setCoords();
-        canvas.renderAll();
-        logCanvas(canvas);
-        storeCanvas(canvas);
-        
-      }
-    }
-
-  });
-});
-
-
-
-
-
-//////LOCAL STORAGE!!!!
-
-function storeCanvas(canvasName){
-localStorage.setItem("canvasX", JSON.stringify(canvasName));
-}
-
-function logCanvas(canvasName){
-console.log(JSON.stringify(canvasName));
-}
-
-var sorted = $( "table tbody" ).sortable( "serialize", { key: "sort" } );
-
-
-
 
