@@ -1,6 +1,6 @@
 var image;
 
-$(document).ready(function() {
+$(document).bind('ready page:load',function() {
     var counter = 1;
 
 
@@ -41,7 +41,7 @@ $('.rotate').hide();
 ////LOAD IMAGE
 
 
-document.getElementById('imgLoader').onchange = function handleImage(e) {
+document.getElementById('imgLoader').onfocus = function handleImage(e) {
     var reader = new FileReader();
     reader.onload = function (event) { 
         var imgObj = new Image();
@@ -81,6 +81,7 @@ document.getElementById('imgLoader').onchange = function handleImage(e) {
         
     }
     reader.readAsDataURL(e.target.files[0]);
+
 }
 
 
