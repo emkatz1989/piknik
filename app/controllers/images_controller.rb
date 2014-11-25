@@ -12,7 +12,7 @@ end
 
 def destroy
 	@image = Image.find(params[:id])
-	@stream.destroy
+	@image.destroy
 end
 
 private
