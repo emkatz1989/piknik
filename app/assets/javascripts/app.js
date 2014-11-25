@@ -9,9 +9,9 @@ imageLoader.addEventListener('change', handleImage, false);
 
 function handleImage(e) {
     var reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = function(event) {
         var img = new Image();
-        img.onload = function () {
+        img.onload = function() {
             var imgInstance = new fabric.Image(img, {
                 scaleX: 1,
                 scaleY: 1

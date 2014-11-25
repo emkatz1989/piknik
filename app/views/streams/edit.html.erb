@@ -4,7 +4,12 @@
 		<%=f.text_field :description, :class => "form-control", :placeholder => "Description"%><br>
 		<%=f.hidden_field :user_id, :value => current_user.id%>
 		<div class="upload">
-  			<%= f.file_field :image, :id => "imageLoader"%>
+  			<tr>
+      <td>
+        <input type="file" id="imageLoader" name="imageLoader" />
+      </td>
+    </tr>
+    </div>
   		<table class="container">
     
     
