@@ -30,7 +30,7 @@ class StreamsController < ApplicationController
 		if @stream.save
 			redirect_to edit_stream_path(@stream)
 		else
-			render 'index'
+			render :back
 		end
 	end
 
