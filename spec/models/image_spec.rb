@@ -1,5 +1,7 @@
 require 'rails_helper'
+require 'shoulda/matchers'
 
-RSpec.describe Image, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Image do
+	it { should validate_presence_of}
+ 
 end

@@ -1,4 +1,4 @@
-class CreateImages < ActiveRecord::Migration
+class AddImages < ActiveRecord::Migration
   def change
     create_table :images do |t|
       t.references :stream
