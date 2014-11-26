@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120053214) do
+ActiveRecord::Schema.define(version: 20141125052653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "images", force: true do |t|
+    t.integer  "stream_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "images", ["stream_id"], name: "index_stream_id", using: :btree
 
   create_table "streams", force: true do |t|
     t.string   "name"
@@ -22,10 +35,6 @@ ActiveRecord::Schema.define(version: 20141120053214) do
     t.binary   "stream"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.integer  "user_id"
   end
 
