@@ -41,7 +41,7 @@ $('.rotate').hide();
 ////LOAD IMAGE
 
 
-document.getElementById('imgLoader').onfocus = function handleImage(e) {
+$('#imgLoader').bind('mouseout', function handleImage(e) {
     var reader = new FileReader();
     reader.onload = function (event) { 
         var imgObj = new Image();
@@ -49,6 +49,7 @@ document.getElementById('imgLoader').onfocus = function handleImage(e) {
         imgObj.onload = function () {
             // start fabricJS stuff
             
+
             image = new fabric.Image(imgObj);
             image.set({
               left: 320,
@@ -82,7 +83,7 @@ document.getElementById('imgLoader').onfocus = function handleImage(e) {
     }
     reader.readAsDataURL(e.target.files[0]);
 
-}
+});
 
 
 
